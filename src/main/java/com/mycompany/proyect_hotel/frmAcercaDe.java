@@ -36,7 +36,7 @@ public class frmAcercaDe extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximizable(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(52, 152, 219));
 
         jLabel1.setText("Grupo 1");
 
