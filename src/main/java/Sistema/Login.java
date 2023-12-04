@@ -1,9 +1,9 @@
-package com.mycompany.proyect_hotel;
+package Sistema;
 
 
 public class Login {
 
-    private String usuario = "pase";
+    private String usuario = "pass";
     private int pass = 123;
 
     public Login() {
