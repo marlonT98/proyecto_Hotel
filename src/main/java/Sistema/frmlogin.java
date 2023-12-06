@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Sistema;
 
 import javax.swing.JOptionPane;
@@ -158,7 +155,7 @@ public class frmlogin extends javax.swing.JFrame {
             abrir.setVisible(true);
 
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña o usuaio incorrecto");
+            JOptionPane.showMessageDialog(rootPane, "Contraseña o usuario incorrecto");
         }
 
 

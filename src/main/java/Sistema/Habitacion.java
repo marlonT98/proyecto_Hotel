@@ -1,4 +1,3 @@
-
 package Sistema;
 
 /**
@@ -7,14 +6,11 @@ package Sistema;
  */
 public class Habitacion {
 
-    //cliente
+    //Atributos de la clase habitacion
     private String nombre;
     private int DNI;
     private char sexo;
     private String nacionalidad;
-  
-    
-    //habitacione
     private int numHabitacion;
     private int piso;
     private int diasAlojados;
@@ -115,12 +111,10 @@ public class Habitacion {
         this.tipoHabitacion = tipoHabitacion;
     }
 
-   public String toString( ){
-       
-       return "nombre: "+nombre+" DNI: "+DNI+" Nacionalidad: "+nacionalidad+" Dias alojados: "+diasAlojados+" habitacion: "+numHabitacion+" precio: "+precioDario;
-               
-   }
-   
-    
+    public String toString() {
+
+        return "nombre: " + nombre + " DNI: " + DNI + " Nacionalidad: " + nacionalidad + " Dias alojados: " + diasAlojados + " habitacion: " + numHabitacion + " precio: " + precioDario;
+
+    }
 
 }

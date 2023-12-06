@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Sistema;
 
 import javax.swing.JOptionPane;
@@ -11,26 +8,19 @@ import javax.swing.JOptionPane;
  * @author Marlon
  */
 public class Inicio extends javax.swing.JFrame {
-    //atributos de la clase
-    private Habitacion habitaciones;//objeto habitacion = null
-    private ControlHabitacion ControlH;//objeto control = null
-    private VentanaRegistro registro;
-    private AcercaDe acercaDe;
+
+  //instancias de las ventanas de registro y acercaDE para su inicio
     
-    
-    
+     VentanaRegistro registro;
+     AcercaDe acercaDe;
 
     public Inicio() {
         initComponents();
-        
-          
+
         //titulo y centrado
         this.setTitle("Dashboard");
         this.setLocationRelativeTo(null);
-        
-        
-        
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -71,7 +61,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(52, 152, 219));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Sistema  de un Hotel");
+        jLabel2.setText("Sistema de Hotel");
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Marlon\\Downloads\\imagenesSistema\\hotel.png")); // NOI18N
 
@@ -351,8 +341,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -372,9 +361,8 @@ public class Inicio extends javax.swing.JFrame {
     private void btnmostrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmostrarClientesActionPerformed
 
         Habitacion h = registro.getHabitaciones();
-        ControlHabitacion c = registro.controlH();
-        
-        
+        ControlHabitacion c = registro.getcontrolH();
+
         txtMostarCliente.setText(c.mostrarHabitaciones());
 
 
@@ -388,10 +376,10 @@ public class Inicio extends javax.swing.JFrame {
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
 
         Habitacion h = registro.getHabitaciones();
-        ControlHabitacion c = registro.controlH();
-        
-        String buscarNombre=txtBuscarNombre.getText();//obteninendo el nombre el txt
-        
+        ControlHabitacion c = registro.getcontrolH();
+
+        String buscarNombre = txtBuscarNombre.getText();//obteninendo el nombre el txt
+
         txtMostarCliente.setText(c.buscarCliente(buscarNombre));
 
 
@@ -399,14 +387,13 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnRegistrarHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarHabitacionActionPerformed
 
-          if (registro != null) {
+        if (registro != null) {
             registro.setVisible(true);
         } else {
-            registro = new VentanaRegistro(habitaciones);
+            registro = new VentanaRegistro();
             registro.setVisible(true);
 
         }
-
 
 
     }//GEN-LAST:event_btnRegistrarHabitacionActionPerformed
@@ -414,8 +401,7 @@ public class Inicio extends javax.swing.JFrame {
     private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
 
         Habitacion h = registro.getHabitaciones();
-        ControlHabitacion c = registro.controlH();
-        
+        ControlHabitacion c = registro.getcontrolH();
 
         String nombreBuscar = txtclienteFacturaNombre.getText();
         String FacturaResultado = c.generarFactura(nombreBuscar);
@@ -426,8 +412,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFacturaActionPerformed
 
     private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
-       
-        
+
         if (acercaDe != null) {
             acercaDe.setVisible(true);
         } else {
@@ -435,18 +420,21 @@ public class Inicio extends javax.swing.JFrame {
             acercaDe.setVisible(true);
 
         }
-    
-        
+
+
     }//GEN-LAST:event_btnAcercaDeActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-       
-    int opcion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
 
-    if (opcion == JOptionPane.YES_OPTION) {
-        System.exit(0);
-    }
-    
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
+
+        if (opcion == JOptionPane.YES_OPTION) {
+            
+            System.exit(0);
+            
+        }
+        
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
